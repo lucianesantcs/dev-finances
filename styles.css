@@ -1,0 +1,280 @@
+:root {
+  --primaryColor: #363f5f;
+  --secondaryColor: #969cb3;
+  --accentColor1: #12a454;
+  --accentColor2: #e92929;
+  --accentColor4: #49aa26;
+  --accentColor5: #3dd705;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%; /* 15px = (100 * 15px) / 16px */
+}
+
+body {
+  background: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--primaryColor);
+  font-weight: 400;
+}
+
+a {
+  color: var(--accentColor4);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accentColor5);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: #fff;
+  background: var(--accentColor4);
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+button:hover {
+  background: var(--accentColor5);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+.button.cancel {
+  color: var(--accentColor2);
+  border: 2px solid var(--accentColor2);
+  border-radius: 0.25rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  font-weight: bold;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+
+header {
+  background: #2d4a22;
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+
+header #logo {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+#balance {
+  margin-top: -7rem;
+}
+
+#balance h2 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+#balance .card {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: var(--primaryColor);
+}
+
+#balance .card h3 {
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#balance .card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+#balance .card.total {
+  background: var(--accentColor4);
+  color: #ffffff;
+}
+
+#transaction {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: var(--secondaryColor);
+}
+
+#data-table img {
+  cursor: pointer;
+}
+
+table thead tr th:first-child,
+table thead tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table thead tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table thead th {
+  background: #ffffff;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+
+table tr:hover {
+  opacity: 1;
+}
+
+table tbody td {
+  background: #ffffff;
+  padding: 1rem 2rem;
+}
+
+td.description {
+  color: var(--primaryColor);
+}
+
+td.income {
+  color: var(--accentColor1);
+}
+
+td.expense {
+  color: var(--accentColor2);
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay .modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.modal-overlay .modal #form {
+  max-width: 500px;
+}
+
+.modal-overlay .modal #form h2 {
+  margin-top: 0;
+}
+
+.modal-overlay .modal #form form input {
+  width: 100%;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+}
+
+.modal-overlay .modal #form form .input-group {
+  margin-top: 0.8rem;
+}
+
+.modal-overlay .modal #form form .input-group .input-help {
+  opacity: 0.4;
+}
+
+.modal-overlay .modal #form form .input-group.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-overlay .modal #form form .input-group.actions .button,
+.modal-overlay .modal #form form .input-group.actions button {
+  width: 48%;
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--primaryColor);
+  opacity: 0.6;
+}
+
+/* responsive  */
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
